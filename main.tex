@@ -73,14 +73,36 @@
 
 \begin{frame}\frametitle{Background} 
 
+\begin{enumerate}
+	\item Bitcoin and blockchain
+	% \item[]\hspace{0.4cm} - \textcolor{orange}{Bitcoin}: The most famous digital currency in the world.
+	\item[] - \textcolor{orange}{Bitcoin}: The most famous digital currency in the world.
+	\item[] - \textcolor{orange}{Blockchain (technology)}: A blockchain is a growing list of records, called blocks, that are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data  
+	\item[] - \textcolor{orange}{Electronic currency} VS. \textcolor{orange}{Digital currency}
+	\item Secure Multiparty Computation (MPC or SMC)
+	\item[] - Secure multi-party computation is a subfield of cryptography with the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private. 
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{An Example of MPC: Yao's Millionaires' Problem} 
+Two millionaires, Alice and Bob, who are interested in knowing which of them is richer \underline{without revealing their actual wealth}.
+\begin{figure}
+	\includegraphics[width=3.1 in, height=1.9in]{myfigs/SMC.jpg}
+\end{figure}
+\colorbox{blue}{A joke}: It's not an example for Yao's Millionaires' Problem and it should an example of Yao's Billionaires' Problem...
+
+\end{frame}
+
+\begin{frame}\frametitle{Limitation of MPC: Marriage Proposal Problem} 
+
 \end{frame}
 
 \begin{frame}\frametitle{Motivation} 
-
-\end{frame}
-
-\begin{frame}\frametitle{Marriage Proposal Problem} 
-
+- Online gambling \newline
+- Online lottery \newline
+- Other activities involving mutual trust
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,26 +113,45 @@
 
 \end{frame}
 
+
 \begin{frame}\frametitle{(Cryptographic) Signature Schemes} 
-
-A \textcolor{orange}{\textbf{digital signature}} is a mathematical scheme for verifying the authenticity of digital messages or documents. A valid digital signature, where the prerequisites are satisfied, gives a recipient very strong reason to believe that the message was created by a known sender (\underline{authentication}), and that the message was not altered in transit (\underline{integrity}).
-
+A \textcolor{orange}{\textbf{digital signature}} is a mathematical scheme for verifying the authenticity of digital messages or documents. A valid digital signature, where the prerequisites are satisfied, gives a recipient very strong reason to believe that the message was created by a known sender (\textcolor{blue}{\underline{authentication}}), and that the message was not altered in transit (\textcolor{blue}{\underline{integrity}}).
 \begin{figure}
 	\includegraphics[width=2.6 in, height=1.9in]{myfigs/wikipedia-signature.jpg}
 	\caption{The MultiPlayersLottery protocol}
 \end{figure}
-
 \end{frame}
 
-\begin{frame}\frametitle{(Cryptographic) Hash Functions} 
 
+
+\begin{frame}\frametitle{(Cryptographic) Hash Functions I}
+A \textcolor{orange}{\textbf{cryptographic hash function}} is a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size ($\{0,1\}^{\textcolor{red}{*}} \rightarrow \{0,1\}^{\textcolor{yellow}{n}}$, just like \textcolor{blue}{compression}) and is a \textcolor{blue}{one-way} function, that is, a function which is practically infeasible to invert. Besides, \textcolor{blue}{collision-resistance}, \textcolor{blue}{pseudo-randomness} and \textcolor{blue}{avalanche effect} are also required. Let's explain them in an \textit{informal} way.
+\begin{enumerate}
+	\item compression: This is natural otherwise why we need hash?
+	\item one-wayness: Mainly for security purpose.
+	\item collision-resistance: The most import point for cryptographic hash.
+	\item pseudomness: Looks like ``real random''.
+	\item avalanche effect: Also for security reason.
+\end{enumerate}
 \end{frame}
+\begin{frame}\frametitle{(Cryptographic) Hash Functions II}
+\begin{figure}
+	\includegraphics[width=3.8 in, height=2.2in]{myfigs/wikipedia-CryptographicHashFunction.jpg}
+	\caption{Avalanche effect of cryptographic hash function}
+\end{figure}
+\end{frame}
+
+
 
 \begin{frame}\frametitle{Commitment Schemes} 
-
+A \textcolor{orange}{\textbf{commitment scheme}} is a cryptographic primitive that allows one to commit to a chosen value (or chosen statement) while keeping it hidden to others, with the ability to reveal the committed value later. Commitment schemes are designed so that a party cannot change the value or statement after they have committed to it: that is, commitment schemes are binding.
+\begin{figure}
+	\includegraphics[width=3.6 in, height=0.7in]{myfigs/coin-flipping.jpg}
+	\caption{Example: coin flipping on the internet}
+\end{figure}
 \end{frame}
 
-\begin{frame}\frametitle{Procedure of Spending a Bitcoin} 
+\begin{frame}\frametitle{Bitcoin Crash Course: Procedure of Spending a Bitcoin} 
 
 \begin{alertblock}{Pivotal points behind a transaction}
 Alice drafts a transaction alerting that she transfer v money to Bob. And 
@@ -124,6 +165,10 @@ Alice drafts a transaction alerting that she transfer v money to Bob. And
 
 \end{frame}
 
+\begin{frame}\frametitle{Bitcoin Crash Course: Generalizing Signature to Script} 
+
+\end{frame}
+
 \begin{frame}\frametitle{Properties of Bitcoin} 
 
 \end{frame}
@@ -134,15 +179,44 @@ Alice drafts a transaction alerting that she transfer v money to Bob. And
 \section{Main Protocols}
 
 \begin{frame}\frametitle{Timed Commitment} 
+\begin{figure}
+	\includegraphics[width=4.6 in]{myfigs/timed-commitment.jpg}
+	\caption{The timed-commitment scheme}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}\frametitle{A Test Trial: The Put Money Transaction}
+\begin{figure}
+	\includegraphics[width=2.2 in]{myfigs/PutMoney1.jpg}
+\end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{Put Money}
+\begin{figure}
+	\includegraphics[width=3 in, height=1.2 in]{myfigs/Compute1.jpg}
+\end{figure}
 
 \end{frame}
+\begin{frame}\frametitle{Put Money}
+\begin{figure}
+	\includegraphics[width=2 in]{myfigs/ClaimMoney1.jpg}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Timed Commitment} 
+
+\end{frame}
+
+
 
 \begin{frame}\frametitle{The Whole Procedure of Multi-Player Lottery Protocol} 
 \begin{figure}
 	\includegraphics[width=4.6 in]{myfigs/lotteryprotocol1.jpg}
 	\caption{The MultiPlayersLottery protocol}
 \end{figure}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,6 +233,31 @@ Alice drafts a transaction alerting that she transfer v money to Bob. And
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
