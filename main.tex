@@ -3,6 +3,17 @@
 
 \usetheme{Blackboard}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 各种线条，老熟人无需赘述。
+\usepackage{ulem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \usepackage{mathpazo}
 
 %\usepackage[latin1]{inputenc}
@@ -72,37 +83,67 @@
 \section{Introduction}
 
 \begin{frame}\frametitle{Background} 
-
 \begin{enumerate}
-	\item Bitcoin and blockchain
+	\item[$\bullet$] Bitcoin and blockchain
 	% \item[]\hspace{0.4cm} - \textcolor{orange}{Bitcoin}: The most famous digital currency in the world.
 	\item[] - \textcolor{orange}{Bitcoin}: The most famous digital currency in the world.
-	\item[] - \textcolor{orange}{Blockchain (technology)}: A blockchain is a growing list of records, called blocks, that are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data  
-	\item[] - \textcolor{orange}{Electronic currency} VS. \textcolor{orange}{Digital currency}
-	\item Secure Multiparty Computation (MPC or SMC)
-	\item[] - Secure multi-party computation is a subfield of cryptography with the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private. 
+	\item[] - \textcolor{orange}{Blockchain (technology)}: \sout{A blockchain is a growing list of records, called blocks, that are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.} \textcolor{red}{We do not care...}
+	\begin{figure}
+		\includegraphics[scale=0.3, angle=270]{myfigs/wikipedia-Blockchain.jpg}
+		\caption{An example of a blockchain}
+	\end{figure}
 \end{enumerate}
-
+\end{frame}
+\begin{frame}\frametitle{Background II} 
+\begin{enumerate}
+	\item[] - \textcolor{orange}{Smart Contract}: \sout{A smart contract is a computer protocol intended to digitally facilitate, verify, or enforce the negotiation or performance of a contract.} \textcolor{red}{TL;DR -- Code is Law; Algorithmic Governance.}
+	\item[$\bullet$] Secure Multiparty Computation (MPC or SMC)
+	\item[] - Secure multi-party computation is a subfield of cryptography with the goal of creating methods for parties to \uwave{\textcolor{orange}{jointly}} compute a function over their inputs while \dashuline{keeping those inputs private}. 
+\end{enumerate}
 \end{frame}
 
 
+\begin{frame}\frametitle{An Example of MPC: Average Salary Problem} 
+An employee wishes to know whether his/her salary exceeds the average level of that in the company. Of course, he/she needs to do it in a privacy-preserving manner: after the protocol, \textcolor{red}{only} the number of \uuline{average salary} should be calculated. How to do this?
+
+\end{frame}
+
 \begin{frame}\frametitle{An Example of MPC: Yao's Millionaires' Problem} 
-Two millionaires, Alice and Bob, who are interested in knowing which of them is richer \underline{without revealing their actual wealth}.
+Two millionaires, Alice and Bob, who are interested in knowing whom of them is richer \dotuline{without revealing their actual wealth}.
 \begin{figure}
 	\includegraphics[width=3.1 in, height=1.9in]{myfigs/SMC.jpg}
 \end{figure}
-\colorbox{blue}{A joke}: It's not an example for Yao's Millionaires' Problem and it should an example of Yao's Billionaires' Problem...
+\pause
+\colorbox{blue}{A joke}: It's not an example for Yao's Millionaires' Problem and it is exactly an example for Yao's \uwave{\textcolor{orange}{\textbf{B(M)illionaires}}}' Problem...
 
 \end{frame}
+
+
+\begin{frame}\frametitle{A Solution to Yao's Millionaires' Problem (without explanation)} 
+
+\end{frame}
+
 
 \begin{frame}\frametitle{Limitation of MPC: Marriage Proposal Problem} 
 
 \end{frame}
 
+
 \begin{frame}\frametitle{Motivation} 
-- Online gambling \newline
-- Online lottery \newline
-- Other activities involving mutual trust
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\flushleft
+\Large
+- Online gambling \newline \vspace{1.5cm}
+
+- Online lottery \newline \vspace{1.5cm}
+
+- Other activities involving mutual trust and \uuline{\textcolor{yellow}{money}}
+\end{minipage}
+}
+\end{center}
+
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -152,15 +193,15 @@ A \textcolor{orange}{\textbf{commitment scheme}} is a cryptographic primitive th
 \end{frame}
 
 \begin{frame}\frametitle{Bitcoin Crash Course: Procedure of Spending a Bitcoin} 
-
-\begin{alertblock}{Pivotal points behind a transaction}
-Alice drafts a transaction alerting that she transfer v money to Bob. And 
+\begin{alertblock}{Pivotal points behind a transaction:}
+Alice drafts a transaction alerting that she transfers \colorbox{blue}{$v$} money/coin to Bob. And other users accept this behavior.
 \end{alertblock}
+\begin{block}{Let's dive deeper into this:}
+1. Alice references an (or multiple) existing transaction(s) in which she is the receiver of a certain amount of money. The number of money should be at least equal to \colorbox{blue}{$v$}. \newline\textcolor{red}{$\Longrightarrow$ //There exists some \underline{unspent} money.}
 
-\begin{block}{}
-1. Alice references an existing transaction in which she is the receiver of a certain amount of money. \textcolor{red}{$\Longrightarrow$ //There exists some \underline{unspent} money.}
+2. Alice signs the transaction with her private key. \newline\textcolor{red}{$\Longrightarrow$ //Alice: I am indeed the owner of the money because I can use it.}
 
-2. Alice signs the transaction with her private key. \textcolor{red}{$\Longrightarrow$ //Alice: I am indeed the owner of the money.}
+3. Alice write in the transaction that she transfers the money to the public key of Bob. \newline\textcolor{red}{$\Longrightarrow$ //Alice: The receiver of my money is Bob, he can use it after this transaction.}
 \end{block}
 
 \end{frame}
@@ -223,8 +264,12 @@ Alice drafts a transaction alerting that she transfer v money to Bob. And
 
 \section[conclu]{Conclusion}
 
-\begin{frame}\frametitle{blankframe} 
 
+\begin{frame}\frametitle{}
+\Huge
+\begin{center}
+\rotatebox{15}{Thanks! Any Questions?}
+\end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
