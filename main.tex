@@ -104,14 +104,24 @@
 
 
 \begin{frame}\frametitle{An Example of MPC: Average Salary Problem} 
-An employee wishes to know whether his/her salary exceeds the average level of that in the company. Of course, he/she needs to do it in a privacy-preserving manner: after the protocol, \textcolor{red}{only} the number of \uuline{average salary} should be calculated. How to do this?
+\textcolor{orange}{\textbf{Problem Description}}: An employee wishes to know whether his/her salary exceeds the average level of that in the company. Of course, he/she needs to do it in a privacy-preserving manner: after the protocol, \textcolor{red}{only} the number of \uuline{average salary} should be calculated. How to do this?
 
+\vspace{0.5cm}
+
+\textcolor{blue}{\textbf{Solution}}: Adding a random number and then 
+\end{frame}
+
+\begin{frame}\frametitle{An Example of MPC: Average Salary Problem II}
+\begin{figure}
+	\includegraphics[width=3.2 in, height=2.5in]{myfigs/averagesalary.jpg}
+\end{figure}
+\colorbox{blue}{Remark}: This protocol will become meaningless in two-party setting. 
 \end{frame}
 
 \begin{frame}\frametitle{An Example of MPC: Yao's Millionaires' Problem} 
-Two millionaires, Alice and Bob, who are interested in knowing whom of them is richer \dotuline{without revealing their actual wealth}.
+\textcolor{orange}{\textbf{Problem Description}}: Two millionaires, Alice and Bob, who are interested in knowing whom of them is richer \dotuline{without revealing their actual wealth}.
 \begin{figure}
-	\includegraphics[width=3.1 in, height=1.9in]{myfigs/SMC.jpg}
+	\includegraphics[width=3.1 in, height=1.9 in]{myfigs/SMC.jpg}
 \end{figure}
 \pause
 \colorbox{blue}{A joke}: It's not an example for Yao's Millionaires' Problem and it is exactly an example for Yao's \uwave{\textcolor{orange}{\textbf{B(M)illionaires}}}' Problem...
@@ -123,6 +133,21 @@ Two millionaires, Alice and Bob, who are interested in knowing whom of them is r
 
 \end{frame}
 
+
+\begin{frame}\frametitle{Limitation of MPC: Marriage Proposal Problem} 
+\textcolor{orange}{\textbf{Problem Description}}: Alice and Bob are in an ambiguous state. Both of them would very very like to know if the other party wishes to marry her/him, and as usual, in a ``private'' manner.
+\end{frame}
+
+
+\begin{frame}\frametitle{Limitation of MPC: Marriage Proposal Problem} 
+\begin{figure}
+	\includegraphics[width=0.8\textwidth, height=0.3\textheight]{myfigs/gaomu1.jpg}
+\end{figure}
+\pause
+\begin{figure}
+	\includegraphics[width=0.8\textwidth, height=0.3\textheight]{myfigs/gaomu2.jpg}
+\end{figure}
+\end{frame}
 
 \begin{frame}\frametitle{Limitation of MPC: Marriage Proposal Problem} 
 
